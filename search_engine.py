@@ -67,6 +67,7 @@ class TextSearch:
         results = self.df.iloc[idx]
         return results.to_dict(orient='records')
 
+
 if __name__ == "__main__":
     sample_records = [
         {"question": "When does the course start?", "text": "The course starts in January.", "course": "de-zoomcamp"},
@@ -87,4 +88,4 @@ if __name__ == "__main__":
     assert len(results) <= 2
     assert all(r["course"] == "de-zoomcamp" for r in results)
     print("All checks passed.")
-    print(results)
+    print("TF-IDF results:", results)
